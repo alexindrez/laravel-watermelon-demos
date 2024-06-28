@@ -26,7 +26,7 @@ async function sync(token) {
     database,
     pullChanges: async ({lastPulledAt}) => {
       const urlParams = `last_pulled_at=${lastPulledAt}`;
-      const response = await fetch(`https://0cd7b3df1b3b.ngrok.io/sync?${urlParams}`, {
+      const response = await fetch(`http://192.168.0.162/sync?${urlParams}`, {
         headers: {
           'Accept': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -40,7 +40,7 @@ async function sync(token) {
       return {changes, timestamp};
     },
     pushChanges: async ({changes}) => {
-      const response = await fetch(`https://0cd7b3df1b3b.ngrok.io/sync`, {
+      const response = await fetch(`http://192.168.0.162/sync`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

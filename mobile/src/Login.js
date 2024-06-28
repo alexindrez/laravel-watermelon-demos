@@ -22,7 +22,7 @@ export default function Login({navigation}) {
   const [checkingToken, setCheckingToken] = useState(true);
 
   const login = useCallback(() => {
-    fetch('https://0cd7b3df1b3b.ngrok.io/sanctum/token', {
+    fetch('http://192.168.0.162/sanctum/token', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
